@@ -1,0 +1,39 @@
+// Deklarasi Variabel Base URL agar lebih rapi
+@baseUrl = http://localhost:3000/api
+
+### 1. GET ALL (Ambil semua buku)
+GET {{baseUrl}}/books
+Accept: application/json
+
+### 2. GET ONE (Ambil buku dengan ID 1)
+GET {{baseUrl}}/books/1
+Accept: application/json
+
+### 3. GET ONE (Contoh jika buku tidak ditemukan / ID 99)
+GET {{baseUrl}}/books/99
+Accept: application/json
+
+### 4. CREATE (Tambah buku baru dengan POST)
+POST {{baseUrl}}/books
+Content-Type: application/json
+
+{
+    "title": "Gadis Kretek",
+    "author": "Ratih Kumala"
+}
+
+### 5. UPDATE (Ubah data buku ID 1 dengan PUT)
+PUT {{baseUrl}}/books/1
+Content-Type: application/json
+
+{
+    "title": "Laskar Pelangi (Edisi Revisi)",
+    "author": "Andrea Hirata"
+}
+
+### 6. DELETE (Hapus buku dengan ID 2)
+DELETE {{baseUrl}}/books/2
+
+### 7. Verifikasi GET ALL (Pastikan data sudah bertambah, berubah, dan terhapus)
+GET {{baseUrl}}/books
+Accept: application/json
